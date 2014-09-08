@@ -21,9 +21,12 @@ $(document).ready(
                          function()
                          {
                             var nb = $(this).find('yt\\:statistics').attr('subscriberCount');
-                            $('<span>' + nb + '</span>').appendTo('#subscriberCount');
+                            $('<span>' + nb + ' abonnés' + '</span>').appendTo('#subscriberCount');
                           });
-                      }
+                      },
+            error: function() {
+              $('<span>' + "Erreur, Impossible de contacter L'API Youtube" + '</span>').appendTo('#subscriberCount');
+            }
         });
   }
 );

@@ -22,6 +22,15 @@ $(document).ready(function() {
 		else {
 			var Error = "Ce n'est pas un email valide";
 			NO(Error);
+		if (validateEmail($('#email').val())) {
+			GetGravateImage($('#email').val());
+		}
+		else {
+			// alert("Invalide Email");
+			$("#error").append("\"" + $('#email').val() + "\"" + " n'est pas un email valide");
+			$("#error").css({
+				display: 'block'
+			});
 		}
 	});
 	CenterMe();
@@ -38,6 +47,7 @@ function validateEmail(email) {
     return re.test(email);
 } 
 
+
 function NO(Error) {
 			$('#TheClic')
   			.popup({
@@ -47,3 +57,4 @@ function NO(Error) {
           		target : '#email'
   			});
 }
+

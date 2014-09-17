@@ -9,7 +9,8 @@
 		<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 		<script src="jquery.md5.min.js"></script>
 		<link href='http://fonts.googleapis.com/css?family=Ubuntu:700' rel='stylesheet' type='text/css'>
-		<link rel="stylesheet" href="../../SemanticUI/css/semantic.css" /> 
+		<link rel="stylesheet" href="../../SemanticUI/css/semantic.css" />
+		<script src="../../SemanticUI/javascript/semantic.js"></script>
 		<style>
   			#code {
     			position: fixed;
@@ -23,17 +24,26 @@
    				text-decoration: none;
    				color : white;
    			}
+   			.ui {
+   				font-family: "Helvetica Neue", Helvetica, Arial;
+   			}
 		</style>
 	</head>
 	
-	<body class="ui teal inverted segment" >		
+	<body class="ui teal inverted segment">
+		<div class="ui error message" id="error" style="display:None;">  
+			<div class="header">
+    			Erreur
+  			</div>
+  			<br />
+  		</div>		
 		<div class="content ui primary inverted segment">
 			<div class="ui primary segment">
 				<img style="margin: 0 auto" class="rounded ui image" id="image" src="user.png" width="200" height="200" />
 			</div>
 			<br />
 			<div id="InputBar" class="ui action input">
-  				<input id="email" placeholder="Gravatar Email" type="text">
+  				<input type="email" id="email" placeholder="Gravatar Email" type="text">
   				<div id="TheClic" class="ui button orange">Go !</div>
 			</div>
 		</div>

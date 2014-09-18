@@ -1,6 +1,7 @@
 function CenterMe(){
 	var left = ($(window).width() - $('.content').outerWidth())/2;
 	var top = ($(window).height() - $('.content').outerHeight())/2;
+	var topheader = top/8;
     $('.content').css({
        	position:'absolute',
         	left: left,
@@ -21,17 +22,15 @@ $(document).ready(function() {
 		}
 		else {
 			var Error = "Ce n'est pas un email valide";
-			NO(Error);
+			ErrorMessage();
 		if (validateEmail($('#email').val())) {
 			GetGravateImage($('#email').val());
 		}
-		else {
 			// alert("Invalide Email");
-			$("#error").append("\"" + $('#email').val() + "\"" + " n'est pas un email valide");
-			$("#error").css({
-				display: 'block'
-			});
 		}
+	});
+	$('#email').focus(function() {
+		$('#TheClic').popup('remove');
 	});
 	CenterMe();
 });
@@ -48,13 +47,14 @@ function validateEmail(email) {
 } 
 
 
-function NO(Error) {
-			$('#TheClic')
-  			.popup({
-  				on: 'click',
+function ErrorMessage() {
+			if ($('#TheClic').popup('exists') == "0") {
+			$('#TheClic').popup({
+				on : 'focus',
           		position : 'bottom center', 
-          		content : Error,
+          		content : "Ce n'est pas un email valide",
           		target : '#email'
-  			});
+  				}).popup('show');
+			}
 }
 

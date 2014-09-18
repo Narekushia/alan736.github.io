@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Gravatar : Récupérer l'avatar à partir de l'adresse mail</title>
+		<!-- <link rel="stylesheet" href="style.css" /> !-->
+		<!-- <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/> !-->
+		<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" /> !-->
+		<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+		<script src="jquery.md5.min.js"></script>
+		<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="../../../../SemanticUI/css/semantic.css" />
+		<script src="../../../../SemanticUI/javascript/semantic.js"></script>
+		<style>
+  			#code {
+    			position: fixed;
+    			bottom: 0;
+   				right: 0;
+   				margin : 5px;
+   				font-family: 'Source Sans Pro', sans-serif;
+   			}
+
+   			/*.header p {
+   				font-family: 'Source Sans Pro', sans-serif;
+   				font-size: 1.5em !important;
+   			}*/
+
+   			#code a {
+   				text-decoration: none;
+   				color : white;
+   			}
+   			.ui .button, .ui .popup{
+   				font-family: "Helvetica Neue", Helvetica, Arial;
+   			}
+		</style>
+	</head>
+	
+	<body class="ui teal inverted segment">
+		<div class="ui huge header" id="error" style="text-align:center"> 
+			<br />
+  		</div>
+  		<div class="content">
+			<div class="ui primary inverted segment">
+				<div class="ui primary segment">
+					<img style="margin: 0 auto" class="rounded ui image" id="image" src="user.png" width="200" height="200" />
+				</div>
+				<br />
+				<div id="InputBar" class="ui action input">
+	  				<input type="email" id="email" placeholder="Gravatar Email" type="text">
+	  				<div id="TheClic" class="ui button orange">Go !</div>
+				</div>
+			</div>
+		</div>
+		<span id="code">
+			<a href="code.html">Voir le Code</a>
+		</span>
+	</body>
+	<script src="script.js"></script>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Code : Gravatar, Récupérer l'avatar à partir de l'adresse mail</title>
+		<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+		<script src="jquery.md5.min.js"></script>
+		<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/highlight.min.js"></script>
+		<link rel="stylesheet" href="../../../../SemanticUI/css/semantic.css" />
+		<script src="../../../../SemanticUI/javascript/semantic.js"></script>
+		<link rel="stylesheet" href="style.css" />
+		<link rel="stylesheet" href="styles/monokai_sublime.css" />
+		<!-- <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/> !-->
+		<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" /> !-->
+		<script>
+		hljs.initHighlightingOnLoad();
+
+		</script>
+		<style>
+			.ui.raised.segment {
+				box-shadow : 0px 0px 4px 4px rgba(0, 0, 0, 0.1);
+			}
+			code {
+				border-radius: 5px;
+				font-family: "Monaco","Menlo","Ubuntu Mono","Consolas","source-code-pro",monospace;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<div class="ui inverted teal page grid segment">
+			<div class="column">
+				<p class="ui huge header" style="text-align:center;">Le Code : Récupérer l'avatar à partir de l'adresse mail (Gravatar)</p>
+			</div>
+		</div>
+		<div class="ui raised page grid segment">
+			<div class="column">
+				<h1>Code</h2>
+				<p>1. Toutes les URLS d'accès aux avatars sont basés sur un email <i>hashé</i> en md5, pour se faire, vous aurez besoin d'un plugin pour jQuery</p>
+				<p>
+					<a class="ui red large labeled icon button" href="jquery.md5.min.js">
+						<i class="download icon"></i>
+							Télécharger
+					</a>
+				</p>
+				<p>2. Il suffira de l'initaliser dans le header de l'HTML et le tour est joué ! Vous pourrez par la suite, avec la fonction <code>$.md5(text)</code> hashé votre email</p>
+				<pre class="html"><code>
+&lt;script src="jquery.md5.min.js"&gt;&lt;/script&gt;
+				</code></pre>
+				<p>3. Voici la fonction qui permet de récupérer l'avatar et de le mettre dans la balise avec l'Id <code>image</code>. <br /><code>?s=200</code> correspond à la taille que l'on veut <strong>(max 2048)</strong></p>
+				<pre class="Javascript"><code>
+function GetGravateImage(email){
+	var emailMD5 = $.md5(email);
+	$('#image').attr('src', 'http://www.gravatar.com/avatar/' + emailMD5 + "?s=200");
+}
+				</code></pre>
+				<p>4. Pour éviter d'envoyer des requêtes inutiles (l'utilisateur ne saisie pas un email), on peut tester si la valeur de l'input contenant l'email est un vrai email.</p>
+				<p>Voici une fonction qui retourne vrai ou faux en fonction de la valeur passé en paramètre</p>
+				<pre><code>
+function validateEmail(email) { 
+    var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
+} 
+				</code></pre>
+				<p>Voilà ! C'est aussi simple que ça !</p>
+				<h2>Sources</h2>
+				<ul class="ui list">
+					<li>Plugin MD5 jQuery par <a href="https://github.com/blueimp/">blueimp</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="ui inverted  page grid segment">
+<div class="sixteen wide center aligned column">
+<p style=""><a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Licence Creative Commons" style="border-width:0;vertical-align:middle" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png"/></a> Ce site créé par Alan Montavon est disponible selon la <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">licence "by-nc"</a></p>
+</div>
+		</div>
+	</body>
+</html>

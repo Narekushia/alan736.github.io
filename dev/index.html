@@ -1,60 +1,60 @@
 <!DOCTYPE html> 
 <html lang="fr"> 
-	<head> 
-		<title>Alan736 : Dev</title> 
-		<meta charset="utf-8"> 
-		<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Open+Sans:300italic,400,300,700' rel='stylesheet' type='text/css'>
-  		<link rel="stylesheet" type="text/css" href="../SemanticUI/css/semantic.css">
-  		<link rel="stylesheet" type="text/css" href="../SemanticUI/font-mfizz/font-mfizz.css">
-  		<link rel="stylesheet" type="text/css" href="style.css">
-  		<style>
-  		.ui.popup {
-  			color : white;
-  			background-color: #f05940;
-  		}
-  		.ui.popup:before {
-  			background-color: #f05940;
-  		}
-  		.githubicon:hover {
-  			color: #f05940 !important;
-  		}
-  		</style>
- 		<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.js"></script>
-  		<script src="../SemanticUI/javascript/semantic.js"></script>
-  		<script>
-  		$(document).ready(function() {
+<head> 
+  <title>Alan736 : Dev</title> 
+  <meta charset="utf-8"> 
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700%7cOpen+Sans:300italic,400,300,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="../SemanticUI/css/semantic.css">
+  <link rel="stylesheet" type="text/css" href="../SemanticUI/font-mfizz/font-mfizz.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <style>
+  .ui.popup {
+   color : white;
+   background-color: #f05940;
+ }
+ .ui.popup:before {
+   background-color: #f05940;
+ }
+ .githubicon:hover {
+   color: #f05940 !important;
+ }
+ </style>
+ <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.js"></script>
+ <script src="../SemanticUI/javascript/semantic.js"></script>
+ <script>
+ $(document).ready(function() {
 
-  			$('.soon').popup({
-          on : 'hover', 
-          position : 'bottom center', 
-          content : 'Bientôt', 
-          transition : 'fade up'
-        });
+   $('.soon').popup({
+    on : 'hover', 
+    position : 'bottom center', 
+    content : 'Bientôt', 
+    transition : 'fade up'
+  });
 
-        $('.soonwhite').popup({
-          on : 'hover', 
-          position : 'bottom center', 
-          content : 'Bientôt', 
-          transition : 'fade up', 
-          inline : false, 
-          variation : 'inverted'});
+   $('.soonwhite').popup({
+    on : 'hover', 
+    position : 'bottom center', 
+    content : 'Bientôt', 
+    transition : 'fade up', 
+    inline : false, 
+    variation : 'inverted'});
 
-  			$('.githubicon').popup({
-          on : 'hover', 
-          position : 'bottom center', 
-          content : 'Mon profil Github', 
-          transition : 'fade up', 
-          variation : 'small', 
-          inline : true});
-  		});
-  		</script>
-	</head>
-	<body>
+   $('.githubicon').popup({
+    on : 'hover', 
+    position : 'bottom center', 
+    content : 'Mon profil Github', 
+    transition : 'fade up', 
+    variation : 'small', 
+    inline : true});
+ });
+ </script>
+</head>
+<body>
 <!--[if lt IE 9]>
 <meta http-equiv="refresh" content="0;URL=../IE/IE.html">
 <![endif]-->
-  <div class="ui inverted page grid segment">
-  	<div class="ui orange menu">
+<div class="ui inverted page grid segment">
+ <div class="ui orange menu">
   <a href="../index.html" class="item">
     <i class="left icon"></i> Site Principal
   </a>
@@ -64,55 +64,56 @@
   <a class="item soon">
     <i class="html5 icon"></i> HTML/CSS
   </a>
-   <a href="projets/Javascript/index.html" class="item">
+  <a href="projets/Javascript/index.html" class="item">
     <i class="icon-javascript"></i> JavaScript
   </a>
   <a class="item soon">
     <i class="icon-java-bold"></i>  Java
   </a>
- <a class="item right menu githubicon" href="http://github.com/alan736">
+  <a class="item right menu githubicon" href="http://github.com/alan736">
     <i class="github icon "></i>
   </a>
 </div>
-    <div class="sixteen wide center aligned column">
+<div class="sixteen wide center aligned column">
 	<div class="ui huge header" style="color :white;"><h1>Bienvenue dans la section Dev !</h1></div>
 </div>
 </div>
 <div class="ui orange inverted page grid overview segment">
-	    <div class="ui two wide column"></div>
-    <div class="twelve wide column">
-      <div class="ui three column center aligned stackable divided grid">
-        <div class="column">
-          <div class="ui icon header">
-            <i class="circular html5 link icon"></i>
-            HTML/CSS
-          </div>
-          <p>Conseil : NE FAITES JAMAIS DE SITE INTERNET AVEC DES TABLEAUX SINON JE VOUS TUE ! </p>
-          <p class="soonwhite"><a class="ui white right labeled icon button" href="#">&lt;a href=&quot;&quot;&gt;Go&lt;/a&gt;<i class="right long arrow icon"></i></a></p>
-        </div>
-        <div class="column">
-          <div class="ui icon header">
-            <i class="circular icon-javascript icon"></i>
-            JavaScript
-          </div>
-          <p>Vous aimez programmer en Java et vous aimez les scripts ? Le JavaScript est fait pour vous !</p>
-          <p><a class="ui white right labeled icon button" href="projets/Javascript/index.html">function Go()<i class="right long arrow icon"></i></a></p>
-        </div>
-        <div class="column">
-          <div class="ui icon header">
-            <i class="circular icon-java icon"></i>
-            Java
-          </div>
-          <p>Ici, vous trouverez des créations faites en Java, plus spécialement des plugins pour des serveurs Bukkit (Minecraft)</p>
-          <p class="soonwhite"><a class="ui white right labeled icon button" href="#">public void Go() <i class="right long arrow icon"></i></a></p>
-        </div>
+ <div class="ui two wide column"></div>
+ <div class="twelve wide column">
+  <div class="ui three column center aligned stackable divided grid">
+    <div class="column">
+      <div class="ui icon header">
+        <i class="circular html5 link icon"></i>
+        HTML/CSS
       </div>
+      <p>Conseil : NE FAITES JAMAIS DE SITE INTERNET AVEC DES TABLEAUX SINON JE VOUS TUE ! </p>
+      <p class="soonwhite"><a class="ui white right labeled icon button" href="#">&lt;a href=&quot;&quot;&gt;Go&lt;/a&gt;<i class="right long arrow icon"></i></a></p>
     </div>
-	</div>
-  <div class="ui inverted page grid segment">
-    <div class="center aligned column">
-          <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Licence Creative Commons" style="width:5%;vertical-align:middle" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a> Ce site créé par Alan Montavon est disponible selon la <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">licence "by-nc"</a>
+    <div class="column">
+      <div class="ui icon header">
+        <i class="circular icon-javascript icon"></i>
+        JavaScript
+      </div>
+      <p>Vous aimez programmer en Java et vous aimez les scripts ? Le JavaScript est fait pour vous !</p>
+      <p><a class="ui white right labeled icon button" href="projets/Javascript/index.html">function Go()<i class="right long arrow icon"></i></a></p>
+    </div>
+    <div class="column">
+      <div class="ui icon header">
+        <i class="circular icon-java icon"></i>
+        Java
+      </div>
+      <p>Ici, vous trouverez des créations faites en Java, plus spécialement des plugins pour des serveurs Bukkit (Minecraft)</p>
+      <p class="soonwhite"><a class="ui white right labeled icon button" href="#">public void Go() <i class="right long arrow icon"></i></a></p>
+    </div>
   </div>
-	</body>
-	
+</div>
+</div>
+<div class="ui inverted page grid segment">
+  <div class="center aligned column">
+    <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Licence Creative Commons" style="width:5%;vertical-align:middle" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a> Ce site créé par Alan Montavon est disponible selon la <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">licence "by-nc"</a>
+  </div>
+</div>
+</body>
+
 </html>

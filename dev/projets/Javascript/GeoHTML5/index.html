@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<title>Javascript/HTML5 : Geolocalisation</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="../../../../SemanticUI/css/semantic.css">
+	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Open+Sans:300italic,400,300,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script src="../../../../SemanticUI/javascript/semantic.js"></script>
+	<style>
+		#map {
+			border-radius : 3px;
+			box-shadow: 0px 0px 8px #888888;
+		}
+	</style>
+</head>
+<body>
+	<div class="ui inverted green page grid segment">
+		<div class="sixteen wide center aligned column">
+			<p class="ui huge header" style="text-align:center;font-size:3em;">Javascript/HTML5 : Geolocalisation</p>
+		</div>
+	</div>
+
+	<div class="ui page grid segment">
+		<div class="sixteen wide center aligned column">
+			<p>Voici un exemple d'utilisation de la Geolocalisation HTML5 avec l'API Google Map</p>
+			<div id="error" class="ui red message transition hidden" ></div>
+			<div id="map" style="width:640px;height:480px;margin:0 auto;margin-bottom:50px;margin-top:50px;"></div>
+			<p style="text-align:center;">
+				<a onclick="LocalisezMoi()" class="large ui button blue">Localisez Moi !</a>
+			</p>
+			<p>Un message va s'afficher vous demandant d'activer la Géolocalisation, Active la sinon rien ne va marcher</p>
+			<div id="maposition" class="transition hidden"></div>
+		</div>
+	</div>
+
+	<div class="ui inverted page grid segment">
+		<div class="sixteen wide center aligned column">
+			<p><a href="code.html" class="ui button"><i class="code icon"></i> Voir le code</a></p>
+			<br/>
+			<p style="">
+				<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">
+					<img alt="Licence Creative Commons" style="border-width:0;vertical-align:middle" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png"/>
+				</a> 
+				<br />
+				Ce site créé par Alan Montavon est disponible selon la <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">licence CC "by-nc"</a>
+			</p>
+		</div>
+	</div>
+
+
+<!-- Chargement de l'API Google maps -->
+<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+
+<script>
+
+var positionBase = new google.maps.LatLng(0,0);
+var options = {
+	center:positionBase,
+	navigationControlOptions: {
+		style: google.maps.NavigationControlStyle.SMALL
+	},
+	mapTypeId: google.maps.MapTypeId.ROADMAP,
+	zoom: 1
+};
+var map = new google.maps.Map(document.getElementById("map"), options);
+
+function LocalisezMoi() {
+	if ($('#error').hasClass('visible')) {
+		$('#error').transition({
+			animation : 'fade',
+			duration  : '1s'
+		});
+	}
+	if(navigator.geolocation) {
+
+		function affichePosition(position) {
+
+			var infopos = "Position déterminée : <br>";
+			infopos += "Latitude : "+position.coords.latitude +"<br>";
+			infopos += "Longitude: "+position.coords.longitude+"<br>";
+			document.getElementById("maposition").innerHTML = infopos;
+
+
+			var latlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+			var marker = new google.maps.Marker({
+				position: latlng,
+				map: map,
+				title:"Vous êtes ici"
+			});
+
+			map.panTo(latlng);
+			map.setZoom(15);
+		}
+
+	// Fonction de callback en cas d’erreur
+	function erreurPosition(error) {
+		var info = "Erreur : ";
+		switch(error.code) {
+			case error.TIMEOUT:
+			info += "Timeout !";
+			break;
+			case error.PERMISSION_DENIED:
+			info += "Vous n’avez pas donné la permission";
+			break;
+			case error.POSITION_UNAVAILABLE:
+			info += "La position n’a pu être déterminée";
+			break;
+			case error.UNKNOWN_ERROR:
+			info += "Erreur inconnue";
+			break;
+		}
+		MessageErreur(info);
+	}
+
+	navigator.geolocation.getCurrentPosition(affichePosition,erreurPosition);
+
+} else {
+	MessageErreur("Ce navigateur ne supporte pas la géolocalisation");
+}
+
+}
+
+function MessageErreur(Message) {
+	$('#error').html(Message);
+	if ($('#error').hasClass('hidden')) {
+		$('#error').transition({
+			animation : 'fade',
+			duration  : '1s'
+		});
+	}
+}
+
+</script>
+
+</body>
+</html>

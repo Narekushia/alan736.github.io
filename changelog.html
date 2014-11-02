@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Alan736 : Dernière modification (Changelog)</title>
+
+		<!-- FAVICON HAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA -->
+		<link rel="shortcut icon" href="favicon/favicon.ico">
+		<link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-touch-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-touch-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-touch-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-touch-icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-touch-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-touch-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-touch-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-touch-icon-152x152.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon-180x180.png">
+		<link rel="icon" type="image/png" href="favicon/favicon-192x192.png" sizes="192x192">
+		<link rel="icon" type="image/png" href="favicon/favicon-160x160.png" sizes="160x160">
+		<link rel="icon" type="image/png" href="favicon/favicon-96x96.png" sizes="96x96">
+		<link rel="icon" type="image/png" href="favicon/favicon-16x16.png" sizes="16x16">
+		<link rel="icon" type="image/png" href="favicon/favicon-32x32.png" sizes="32x32">
+		<meta name="msapplication-TileColor" content="#3b9972">
+		<meta name="msapplication-TileImage" content="favicon/mstile-144x144.png">
+		<meta name="msapplication-config" content="favicon/browserconfig.xml">
+
+		<link rel="stylesheet" href="style.css" />
+		<link rel="stylesheet" href="SemanticUI/css/semantic.css" />
+		<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+		<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" /> !-->
+		<style>
+			.ui.raised.segment, #divRss {
+				box-shadow : 0px 0px 4px 4px rgba(0, 0, 0, 0.1);
+			}
+
+			.extra.text {
+				font-family: "Monaco","Menlo","Ubuntu Mono","Consolas","source-code-pro",monospace !important;
+			}
+
+		</style>
+	</head>
+	
+	<body>
+		<div class="ui inverted purple page grid segment">
+			<div class="column">
+				<p class="ui huge header" style="text-align:center;">Dernière modification (Changelog)</p>
+			</div>
+		</div>
+		<div class="ui raised page grid segment">
+			<div class="column">
+				<div id="divRss"></div>
+				<br />
+				<br />
+				<a style="margin-top:40px" class="ui huge fluid labeled icon button orange" href="https://github.com/alan736/alan736.github.io/commits/master.atom">
+					<i class="rss icon"></i>
+					S'abonner à ce flux ATOM
+				</a>
+			</div>
+		</div>
+		<div class="ui inverted  page grid segment">
+<div class="sixteen wide center aligned column">
+<p style=""><a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Licence Creative Commons" style="border-width:0;vertical-align:middle" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png"/></a> Ce site créé par Alan Montavon est disponible selon la <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">licence "by-nc"</a></p>
+</div>
+		</div>
+		<!-- SCRIPT -->
+		<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+		<script type="text/javascript" src="FeedEk/js/FeedEk.js"></script>
+		<script>
+			$(document).ready(function () {
+        		$('#divRss').FeedEk({
+           			FeedUrl: 'https://github.com/alan736/alan736.github.io/commits/master.atom',
+            		MaxCount: 10,
+            		label : '<img src="https://avatars3.githubusercontent.com/u/6026044?s=50" >',
+            		github : true,
+            		githubname : 'Alan736'
+        		});
+        	});
+		</script>
+	</body>
+</html>

@@ -33,24 +33,37 @@
 			border-radius : 3px;
 			box-shadow: 0px 0px 8px #888888;
 		}
+
+		.ui.raised.segment {
+			box-shadow : 0px 0px 4px 4px rgba(0, 0, 0, 0.1);
+		}
+
+		#header {
+			background : url('background-top.jpg');
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
 	</style>
 </head>
 <body>
-	<div class="ui inverted green page grid segment">
+	<div id="header" class="ui inverted green page grid segment">
 		<div class="sixteen wide center aligned column">
-			<p class="ui huge header" style="text-align:center;font-size:3em;">Javascript/HTML5 : Geolocalisation</p>
+		<a href="../index.html"style="position: fixed;top: 1em;left: 1em;" class="large ui button blue"><i class="left icon"></i> Retour</a>
+			<p class="ui huge header" style="text-align:center;font-size:3em;text-shadow : 0px 0px 5px #3A3A3A;">Javascript/HTML5 : Geolocalisation</p>
 		</div>
 	</div>
 
 	<div class="ui page grid segment">
 		<div class="sixteen wide center aligned column">
+
 			<p>Voici un exemple d'utilisation de la Geolocalisation HTML5 avec l'API Google Map</p>
 			<div id="error" class="ui red message transition hidden" ></div>
 			<div id="map" style="width:640px;height:480px;margin:0 auto;margin-bottom:50px;margin-top:50px;"></div>
 			<p style="text-align:center;">
 				<a onclick="LocalisezMoi()" class="large ui button blue">Localisez Moi !</a>
 			</p>
-			<p>Un message va s'afficher vous demandant d'activer la Géolocalisation, Active la sinon rien ne va marcher</p>
+			<p style="color:red;font-weight:bold;">/!\ Un message va s'afficher vous demandant d'activer la Géolocalisation, Activez la sinon rien ne va fonctionner /!\</p>
 			<div id="maposition" class="transition hidden"></div>
 		</div>
 	</div>

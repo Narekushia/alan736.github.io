@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	 <!-- FAVICON HAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA -->
+	<link rel="shortcut icon" href="favicon/favicon.ico">
+	<link rel="apple-touch-icon" sizes="57x57" href="../../../../favicon/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="../../../../favicon/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="../../../../favicon/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="../../../../favicon/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="../../../../favicon/apple-touch-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="../../../../favicon/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="../../../../favicon/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="../../../../favicon/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="../../../../favicon/apple-touch-icon-180x180.png">
+	<link rel="icon" type="image/png" href="../../../../favicon/favicon-192x192.png" sizes="192x192">
+	<link rel="icon" type="image/png" href="../../../../favicon/favicon-160x160.png" sizes="160x160">
+	<link rel="icon" type="image/png" href="../../../../favicon/favicon-96x96.png" sizes="96x96">
+	<link rel="icon" type="image/png" href="../../../../favicon/favicon-16x16.png" sizes="16x16">
+	<link rel="icon" type="image/png" href="../../../../favicon/favicon-32x32.png" sizes="32x32">
+	<meta name="msapplication-TileColor" content="#3b9972">
+	<meta name="msapplication-TileImage" content="favicon/mstile-144x144.png">
+	<meta name="msapplication-config" content="favicon/browserconfig.xml">
+
+	<title>jQuery/PHP : Réducteur d'URL (Url Shortener)</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="../../../../SemanticUI/css/semantic.css">
+	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Open+Sans:300italic,400,300,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script src="../../../../SemanticUI/javascript/semantic.js"></script>
+	<style>
+		#map {
+			border-radius : 3px;
+			box-shadow: 0px 0px 8px #888888;
+		}
+
+		.ui.page.segment {
+			box-shadow : 0px 0px 4px 2px rgba(0, 0, 0, 0.1);
+		}
+
+		#header {
+			/*background : url('background-top.jpg');
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: cover;*/
+		}
+
+	</style>
+</head>
+<body>
+	<div id="header" class="ui inverted green page grid segment">
+		<div class="sixteen wide center aligned column">
+		<a href="../index.html"style="position: fixed;top: 1em;left: 1em;" class="large ui button blue"><i class="left icon"></i> Retour</a>
+			<p class="ui huge header" style="text-align:center;font-size:3em;text-shadow : 0px 0px 3px #3A3A3A;">jQuery/PHP : Réducteur d'URL (Url Shortener)</p>
+		</div>
+	</div>
+
+	<div class="ui page grid segment" max-width="500px">
+		<div class="sixteen wide center aligned column">
+			<div class="ui form segment">
+				<div id="Loading" class="ui inactive dimmer"><div class="ui large text loader">Raccourcissment de l'URL</div></div>
+				<div class="field">
+					<label>URL à raccourcir</label>
+					<input id="LongURL" placeholder="URL" name="LongURL" type="text">
+				</div>
+				<div id="ServiceDIV" >
+					<div class="field">
+						<label>Service de réduction d'URL</label>
+						<div id="ServiceDrop" class="ui fluid selection dropdown">
+							<div class="text">Sites</div>
+							<i class="dropdown icon"></i>
+							<input id="ServiceInput" name="service" type="hidden">
+							<div id="Site" class="menu">
+								<div class="item" data-value="bitly">Bit.ly</div>
+								<div class="item" data-value="google">Goo.gl</div>
+							</div>
+						</div>
+					</div>
+					<div id="LiensBitly" style="display:none;" class="field">
+						<label>Apparence du Lien Bit.ly</label>
+						<div id="LiensBitlyDrop" class="ui fluid selection dropdown">
+							<div class="text">Apparence</div>
+							<i class="dropdown icon"></i>
+							<input id="apparenceInput" name="apparence" type="hidden">
+							<div id="Site" class="menu">
+								<div class="item" data-value="bitly">Bit.ly/xxxx</div>
+								<div class="item" data-value="bitlycom">bitly.com/xxxx</div>
+								<div class="item" data-value="jmp">j.mp/xxxx</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="Envoyer" class="ui red submit button">Envoyer</div>
+				<div id="Resultat" style="display:none;" class="field">
+					<br />
+					<br />
+					<label>Résultat :</label>
+					<input style="text-align:center;" name="service" readonly="readonly" type="text">
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="ui inverted page grid segment">
+		<div class="sixteen wide center aligned column">
+			<p><a href="code.html" class="ui button"><i class="code icon"></i> Voir le code</a></p>
+			<br/>
+			<br />
+			<p style="">
+				<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">
+					<img alt="Licence Creative Commons" style="border-width:0;vertical-align:middle" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png"/>
+				</a> 
+				<br />
+				Ce site créé par Alan Montavon est disponible selon la <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">licence CC "by-nc"</a>
+			</p>
+		</div>
+	</div>
+	<script>
+		$(function(){ 
+			/* $('#Envoyer').click(function() {
+				SHORTME();
+			}); */
+			$('.ui.dropdown').dropdown();
+			$('#ServiceDrop').dropdown({
+				onChange : function(value) {
+					console.log(value);
+					if (value == "bitly") {
+						$('#ServiceDIV').addClass('two fields');
+						$('#LiensBitly').css('display', 'block');
+					}
+					else if (value == "google") {
+						$('#LiensBitly').css('display', 'none');
+						$('#ServiceDIV').removeClass('two fields');
+					}
+				}
+			});
+
+
+
+			// 
+			// FORM VALIDATION
+			// 
+			
+			var settings = {
+				inline : true,
+				on : 'blur',
+				onSuccess : function() {
+            		//THIS SHOULD DO SOMETHING :-(
+            		//alert("TESTZ");
+            		$('#Loading').removeClass('inactive');
+            		$('#Loading').addClass('active');
+            		SHORTME($('#ServiceInput').val());
+            	}
+            };
+
+			var rules = {
+				URL: {
+					identifier  : 'LongURL',
+					rules: [{
+						type : 'url',
+						prompt : 'Veuillez entre une URL Valide'
+					}]
+				},
+				Service: {
+					identifier : 'ServiceInput',
+					rules: [
+					{
+						type : 'empty',
+						prompt : 'Veuillez sélectionner un service'
+					}]
+				}
+			};
+
+			$('#ServiceInput').change(function() {
+				if ($(this).val() == 'bitly') {
+					rules.apparence = {
+						identifier : 'apparenceInput',
+						rules: [
+						{
+							type : 'empty',
+							prompt : 'Veuillez sélectionner une apparence'
+						}]
+					}
+					$('.ui.form').form(rules,settings);
+				}
+				else {
+					delete settings.apparence;
+					$('.ui.form').form(rules,settings);
+				}
+			});
+			
+			$('.ui.form').form(rules,settings);
+		});
+
+		function SHORTME(Service) {
+			var PHPFile = "";
+			var BitlySite = "";
+
+			if (Service == 'bitly') {
+				PHPFile = "bitlyapi.php";
+				switch($('#apparenceInput').val()) {
+				case "bitly"  : 
+					BitlySite = "http://bit.ly/"
+					break;
+				case "bitlycom" : 
+					BitlySite = "http://bitly.com/"
+					break;
+				case 'jmp' : 
+					BitlySite = "http://j.mp/"
+					break;
+				default :
+					console.log("PROBLEM OMFG !!!!!!!")
+				}
+	
+			} 
+			else if (Service == 'google') {
+				PHPFile = "googleapi.php";
+			}
+			
+
+
+			$.ajax({
+				url: 'http://alanovhnku.cluster014.ovh.net/' + PHPFile,
+				dataType: 'jsonp',
+				jsonp:"LEcallback",
+				data: {urltoshort:encodeURIComponent($('#LongURL').val())},
+				success : function(data){
+					console.log(BitlySite + data.urlshorted);
+
+					$('#Resultat input').val(BitlySite + data.urlshorted);
+					$('#Resultat').css('display', 'inline');
+
+					$('#Loading').removeClass('active');
+            		$('#Loading').addClass('inactive');
+				}
+			})
+
+
+
+			/*var Apparence = $('#LiensBitlyDrop').dropdown('get value');
+			var Service = $('#ServiceDrop').dropdown('get value');
+			var URL = $('#LongURL').text();
+			var Erreur = [];
+
+			if(URL != "") {
+				if (RegexURL(URL) == false){
+					Erreur.push('URLError_Regex');
+				}
+			}
+			else {
+				Erreur.push('URLError_Empty');
+			}
+			
+			if(Service == "") {
+				Erreur.push('ServiceError_Empty');
+			}
+			else {
+				if(Apparence == "") {
+					Erreur.push('ApparenceError_Empty')
+				}
+			}
+
+			if(Erreur.length != 0) {
+				GestionErreur(Erreur);
+				return;
+			}*/
+
+		}
+
+		function GestionErreur(ListeErreur) {
+			$.each(ListeErreur, function(index, val) {
+				switch(val) {
+					case 'URLError_Regex' :
+						$('#URLError_Regex').css('display', 'inline-block');
+						break;
+					case 'URLError_Empty' :
+						$('#URLError_Empty').css('display', 'inline-block');
+						break;
+					case 'ServiceError_Empty' :
+						$('#ServiceError_Empty').css('display', 'inline-block');
+						break;
+					case 'ApparenceError_Empty' :
+						$('#ApparenceError_Empty').css('display', 'inline-block');
+						break;
+				}
+			});
+
+		}
+
+		function RegexURL(value) {
+      		var urlRegExp = /(http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/;
+
+      		return urlRegExp.test(value);
+    	}
+
+	</script>
+</body>
+</html>

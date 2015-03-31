@@ -45,7 +45,7 @@
                     s+= '<div class="content"><div class="summary">';
 
                     if (def.github) {
-                        s+= '<a href="http://github.com/' + def.githubname + '">' + def.githubname + '</a> commited : ';
+                        s+= '<a href="https://github.com/' + def.githubname + '">' + def.githubname + '</a> commited : ';
                     }
 
                     s+= '<a style="" href="' + item.link + '" target="' + def.TitleLinkTarget + '" >' + item.title + "</a></div>";

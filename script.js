@@ -26,7 +26,7 @@ $(document).ready(
               },
             error: function() {
               $.ajax({
-                url : "http://alanovhnku.cluster014.ovh.net/youtubeapi.php",
+                url : "//alanovhnku.cluster014.ovh.net/youtubeapi.php",
                 dataType:"jsonp",
                 jsonp:"apicallback",
                 success:function(data)

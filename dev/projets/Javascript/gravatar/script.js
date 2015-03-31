@@ -38,7 +38,7 @@ $(document).ready(function() {
 
 function GetGravateImage(email){
 	var emailMD5 = $.md5(email);
-	$('#image').attr('src', 'http://www.gravatar.com/avatar/' + emailMD5 + "?s=200");
+	$('#image').attr('src', 'https://www.gravatar.com/avatar/' + emailMD5 + "?s=200");
 }
 
 function validateEmail(email) { 

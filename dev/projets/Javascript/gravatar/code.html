@@ -25,8 +25,8 @@
 		<title>Code : Gravatar, Récupérer l'avatar à partir de l'adresse mail</title>
 		<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 		<script src="jquery.md5.min.js"></script>
-		<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
-		<script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/highlight.min.js"></script>
+		<link href='//fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/highlight.min.js"></script>
 		<link rel="stylesheet" href="../../../../SemanticUI/css/semantic.css" />
 		<script src="../../../../SemanticUI/javascript/semantic.js"></script>
 		<link rel="stylesheet" href="style.css" />
@@ -72,7 +72,7 @@
 				<pre class="Javascript"><code>
 function GetGravateImage(email){
 	var emailMD5 = $.md5(email);
-	$('#image').attr('src', 'http://www.gravatar.com/avatar/' + emailMD5 + "?s=200");
+	$('#image').attr('src', 'https://www.gravatar.com/avatar/' + emailMD5 + "?s=200");
 }
 				</code></pre>
 				<p>4. Pour éviter d'envoyer des requêtes inutiles (l'utilisateur ne saisie pas un email), on peut tester si la valeur de l'input contenant l'email est un vrai email.</p>
@@ -92,7 +92,7 @@ function validateEmail(email) {
 		</div>
 		<div class="ui inverted  page grid segment">
 <div class="sixteen wide center aligned column">
-<p style=""><a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Licence Creative Commons" style="border-width:0;vertical-align:middle" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png"/></a> Ce site créé par Alan Montavon est disponible selon la <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">licence "by-nc"</a></p>
+<p style=""><a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/"><img alt="Licence Creative Commons" style="border-width:0;vertical-align:middle" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png"/></a> Ce site créé par Alan Montavon est disponible selon la <a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/">licence "by-nc"</a></p>
 </div>
 		</div>
 	</body>

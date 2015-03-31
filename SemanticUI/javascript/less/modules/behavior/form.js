@@ -1,11 +1,11 @@
 /*
  * # Semantic - Form Validation
- * http://github.com/jlukic/semantic-ui/
+ * https://github.com/jlukic/semantic-ui/
  *
  *
  * Copyright 2013 Contributors
  * Released under the MIT license
- * http://opensource.org/licenses/MIT
+ * https://opensource.org/licenses/MIT
  *
  */
 

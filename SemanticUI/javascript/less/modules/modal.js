@@ -1,11 +1,11 @@
 /*
  * # Semantic - Modal
- * http://github.com/semantic-org/semantic-ui/
+ * https://github.com/semantic-org/semantic-ui/
  *
  *
  * Copyright 2013 Contributors
  * Released under the MIT license
- * http://opensource.org/licenses/MIT
+ * https://opensource.org/licenses/MIT
  *
  */
 

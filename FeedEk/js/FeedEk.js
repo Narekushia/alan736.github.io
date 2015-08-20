@@ -14,7 +14,7 @@
 (function ($) {
     $.fn.FeedEk = function (opt) {
         var def = $.extend({
-            FeedUrl: "http://rss.cnn.com/rss/edition.rss",
+            FeedUrl: "https://github.com/alan736/alan736.github.io/commits/master.atom",
             MaxCount: 5,
             ShowDesc: true,
             ShowPubDate: true,
@@ -31,7 +31,7 @@
             dt;
         $("#" + id).empty().append('<img src="loader.gif" />');
         $.ajax({
-            url: "http://ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=" + def.MaxCount + "&output=json&q=" + encodeURIComponent(def.FeedUrl) + "&hl=en&callback=?",
+            url: "https://ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=" + def.MaxCount + "&output=json&q=" + encodeURIComponent(def.FeedUrl) + "&hl=en&callback=?",
             dataType: "json",
             success: function (data) {
                 $("#" + id).empty();

@@ -1,23 +1,28 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<title>Alan736's Homepage</title>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
-	<link href='//fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Lato:700,400' rel='stylesheet' type='text/css'>
 	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 	<link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 
 <body>
 	<div class="content">
-		<img alt="Alan736 Avatar" width="200" height="200" src="img/avatar.png" onmouseover="hover(this);" onmouseout="unhover(this);" />
+		<div class="avatar-container">
+			<img id="default-avatar" alt="Alan736 Avatar" src="img/avatar.png" />
+			<img id="alt-avatar" alt="Alan736 Avatar" src="img/avatar_hidden.jpeg" />
+		</div>
+
 		<h1>Alan736</h1>
 		<p class="subtitle">Hello! Welcome to my placeholder page for my domain. It is up to you to discover the subdomains.</p>
 		<h3>On the internet</h3>
 		<div class="icons">
-			<a class="link-github" href="https://github/alan736">
+			<a class="link-github" href="https://github.com/alan736">
 				<i class="fa fa-github" aria-hidden="true"></i>
 			</a>
 			<a class="link-twitter" href="https://twitter.com/alan736">
@@ -32,6 +37,5 @@
 		</div>
 	</div>
 	<img class="bottom-sticky" width="150" src="img/oh.png" />
-	<script src="script.js" type="text/javascript"></script>
 </body>
 </html>

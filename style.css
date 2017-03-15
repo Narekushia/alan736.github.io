@@ -4,10 +4,6 @@ body {
 	color:#FFFFFF;
 }
 
-img {
-	border-radius: 0.3125em;
-}
-
 .content {
 	margin:0 auto;
 	margin-top:10em;
@@ -15,8 +11,43 @@ img {
 	text-align: center;
 }
 
+.avatar-container {
+	position:relative;
+	margin: 0 auto;
+	font-size:0;
+	width:200px;
+	height:auto;
+}
+
+.avatar-container img {
+	font-size: 1rem;
+	max-width:100%;
+	border-radius: 0.3125rem;
+}
+
+#default-avatar {
+	position:absolute;
+	top: 0;
+	left: 0;
+	z-index: 4;
+	-webkit-transition: all 0.5s ease 0.1s;
+	transition: all 0.5s ease 0.1s;
+	opacity: 1;
+}
+
+#alt-avatar {
+	position: relative;
+	z-index: 3;
+}
+
+.avatar-container:hover #default-avatar {
+	opacity:0;
+}
+
 .fa {
 	font-size: 2.5em !important;
+	-webkit-transition: all 250ms ease 20ms;
+	transition: all 250ms ease 20ms;
 }
 
 .icons .fa {
@@ -33,7 +64,6 @@ img {
 
 .icons .fa-github:hover {
 	color: #76258B;
-	border
 }
 
 .icons .fa-film:hover {

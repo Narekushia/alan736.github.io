@@ -7,7 +7,7 @@ body {
 .content {
 	margin:0 auto;
 	margin-top:10em;
-	width:350px;
+	width:450px;
 	text-align: center;
 }
 
@@ -67,7 +67,15 @@ body {
 }
 
 .icons .fa-film:hover {
-	color : #F2711C;
+	color: #F2711C;
+}
+
+.icons .link-osu i:hover {
+	color: #bb1177;
+}
+
+.icons .link-mfc i:hover {
+	color: #6B9F5B;
 }
 
 a, a:visited {

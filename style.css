@@ -70,6 +70,10 @@ body {
 	color: #F2711C;
 }
 
+.icons .fa-gitlab:hover {
+	color: #e24329;
+}
+
 .icons .link-osu i:hover {
 	color: #bb1177;
 }

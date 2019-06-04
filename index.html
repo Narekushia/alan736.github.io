@@ -1,6 +1,14 @@
 ---
 
 ---
+<!---
+ ____  ____    _               _           _      _
+|___ \| __ )  | |__   ___  ___| |_    __ _(_)_ __| |
+  __) |  _ \  | '_ \ / _ \/ __| __|  / _` | | '__| |
+ / __/| |_) | | |_) |  __/\__ \ |_  | (_| | | |  | |
+|_____|____/  |_.__/ \___||___/\__|  \__, |_|_|  |_|
+                                     |___/
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -48,7 +56,7 @@
 			color:#eee;
 		}
 
-		.oui {
+		.user {
 			color:rgb(221, 39, 103)
 		}
 
@@ -63,6 +71,10 @@
 
 		.json {
 			color:rgb(231, 219, 116)
+		}
+		
+		.json > .text {
+			color:rgb(172, 128, 255);
 		}
 
 		.code-shell a {
@@ -112,63 +124,26 @@
 </head>
 
 <body>
-	<div>
 	<div class="shell-wrap">
-			<div class="code-shell">
-				<p><span class="oui">root@2b</span>:<span class="path">~</span># cat info.json</p>
-				<p>{</p>
-				<p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="json">"name"</span> : "Narekushia",</p>
-				<p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="json">"description"</span> : "Swiss Weeb doing things with a keyboard",</p>
-				<p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="json">"location"</span> : "Hidden in the Swiss Alp"</p>
-				<p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="json">"social_media"</span> : {</p>
-				{% for media in site.data.social %}
-				<p>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="json">"{{ media[0] }}"</span>: <a href="{{ media[1]['link'] }}" class="json">"<span class="link">{{ media[1]["label"] }}</span>"</a>,
-				</p>
-				{% endfor %}
-				<p>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
-				<p>}</p>
-			  <p><span class="oui">root@2b</span>:<span class="path">~</span>#<span class="blinking-cursor">█</span></p>
-			</div>
-		  </div>
-		</div>
-</body>
-<!--
-<body>
-	<div class="content">
-		<div class="avatar-container">
-			<img id="default-avatar" alt="Alan736 Avatar" src="img/avatar.png" />
-			<img id="alt-avatar" alt="Alan736 Avatar" src="img/avatar_hidden.jpeg" />
-		</div>
+		<div class="code-shell">
+			<p><span class="user">root@2b</span>:<span class="path">~</span># cat info.json</p>
+			<p>{</p>
 
-		<h1>Alan736</h1>
-		<p class="subtitle">Hello! I'm a Swiss web developer who happen to be a weeb.</p>
-		<h3>On the internet</h3>
-		<div class="icons">
-			<a class="link-github" href="https://github.com/alan736">
-				<i class="fa fa-github" aria-hidden="true"></i>
-			</a>
-			<a class="link-twitter" href="https://twitter.com/alan736">
-				<i class="fa fa-twitter" aria-hidden="true"></i>
-			</a>
-			<a class="link-youtube" href="https://youtube.com/user/alan736">
-				<i class="fa fa-youtube-play" aria-hidden="true"></i>
-			</a>
-			<a class="link-animelist" href="https://myanimelist.net/animelist/alan736">
-				<i class="fa fa-film" aria-hidden="true"></i>
-			</a>
-			<a class="link-osu" href="https://osu.ppy.sh/u/2255416">
-				<i class="fa fa-mouse-pointer" aria-hidden="true"></i>
-			</a>
-			<a class="link-mfc" href="https://myfigurecollection.net/profile/alan736">
-				<i class="fa fa-gift" aria-hidden="true"></i>
-			</a>
-			<a class="link-gitlab" href="https://gitlab.com/alan736">
-				<i class="fa fa-gitlab" aria-hidden="true"></i>
-			</a>
+			{% for detail in site.data.profile %}
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="json">"{{ detail[0] }}"</span> : <span class="json">"<span class="text">{{ detail[1] }}</span>"</span>,</p>
+			{% endfor %}
+
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="json">"social_media"</span> : {</p>
+			{% for media in site.data.social %}
+			<p>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="json">"{{ media[0] }}"</span>: <a href="{{ media[1]['link'] }}" class="json">"<span class="link">{{ media[1]["label"] }}</span>"</a>,
+			</p>
+			{% endfor %}
+
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+			<p>}</p>
+			<p><span class="user">root@2b</span>:<span class="path">~</span>#<span class="blinking-cursor">█</span></p>
 		</div>
 	</div>
-	<img class="bottom-sticky" width="150" src="img/oh.png" />
 </body>
--->
 </html>

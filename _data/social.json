@@ -1,4 +1,12 @@
 {
+	"Github" : {
+		"label": "alan736",
+		"link" : "https://github.com/alan736"
+	},
+	"Gitlab" : {
+		"label": "alan736",
+		"link" : "https://gitlab.com/alan736"
+	},
 	"Twitter" : {
 		"label": "alan736",
 		"link" : "https://twitter.com/alan736"
@@ -15,16 +23,8 @@
 		"label": "alan736",
 		"link" : "https://osu.ppy.sh/u/2255416"
 	},
-	"Github" : {
-		"label": "alan736",
-		"link" : "https://github.com/alan736"
-	},
 	"MyFigureCollection" : {
 		"label": "alan736",
 		"link" : "https://myfigurecollection.net/profile/alan736"
-	},
-	"Gitlab" : {
-		"label": "alan736",
-		"link" : "https://gitlab.com/alan736"
 	}
 }

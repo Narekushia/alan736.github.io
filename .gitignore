@@ -1,1 +1,5 @@
 *.db
+old/
+
+_site/
+.jekyll-metadata

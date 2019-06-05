@@ -1,5 +1,6 @@
-alan736.github.io
+alan736.ch
 =================
 
-Placeholder page for my domain.
+A website, like many other on the internet
 
+(Use Jekyll)
